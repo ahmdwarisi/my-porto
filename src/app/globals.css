@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --color-primary: 196 164 130;
+  --color-primary-container: 73 61 49;
+  --color-primary-fixed: 232 201 168;
+  --color-on-primary: 39 27 16;
+  --color-on-primary-container: 232 201 168;
+  --color-surface: 23 20 17;
+  --color-surface-bright: 57 51 45;
+  --color-surface-container: 33 29 25;
+  --color-surface-container-low: 28 25 22;
+  --color-surface-container-high: 43 38 33;
+  --color-surface-container-highest: 54 48 42;
+  --color-on-surface: 238 224 210;
+  --color-on-surface-variant: 203 187 169;
+  --color-tertiary: 212 178 142;
+  --color-tertiary-fixed: 232 201 168;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --color-primary: 135 93 51;
+  --color-primary-container: 241 223 202;
+  --color-primary-fixed: 115 80 45;
+  --color-on-primary: 255 255 255;
+  --color-on-primary-container: 59 41 23;
+  --color-surface: 250 248 245;
+  --color-surface-bright: 255 255 255;
+  --color-surface-container: 241 236 230;
+  --color-surface-container-low: 247 244 239;
+  --color-surface-container-high: 235 229 221;
+  --color-surface-container-highest: 222 213 202;
+  --color-on-surface: 44 36 29;
+  --color-on-surface-variant: 98 86 75;
+  --color-tertiary: 117 84 47;
+  --color-tertiary-fixed: 94 67 40;
+}
+
+.canvas-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgb(var(--color-surface-container-highest)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--color-surface-container-highest)) 1px, transparent 1px);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(var(--color-surface));
+  color: rgb(var(--color-on-surface));
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+[data-theme='light'] .text-white,
+[data-theme='light'] .hover\:text-white:hover {
+  color: rgb(var(--color-on-surface));
+}
